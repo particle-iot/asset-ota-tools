@@ -13,6 +13,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.set_version.outputs.version }}
 
     strategy:
       matrix:
@@ -26,12 +28,18 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm run test_linux
+    - name: Extract version from package.json
+      id: set_version
+      run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
+    - name: Setup
+      run: npm ci
+
+    - name: Build
+      run: npm run build --if-present
 
     - name: Zip binaries
-      run: zip -r release-${{ steps.set_version.outputs.version }}.zip ./dist
+      run: zip -r release-${{ steps.set_version.outputs.version }}.zip ./dist/*
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
