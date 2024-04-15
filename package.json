@@ -1,0 +1,20 @@
+{
+  "name": "particle-asset-ota-tools",
+  "version": "1.0.0",
+  "description": "Particle Asset OTA Tools",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "arg": "^5.0.2",
+    "binary-version-reader": "^2.4.0",
+    "pkg": "^5.8.1",
+    "util": "^0.12.5"
+  },
+  "pkg": {
+    "targets": [ "node18-linux-arm64", "node18-linux-x64", "node18-macos-x64", "node18-macos-arm64", "node18-win-x64"],
+    "outputPath": "dist"
+  }
+}
