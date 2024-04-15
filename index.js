@@ -1,6 +1,7 @@
 const arg = require('arg');
 const { ModuleInfo, removeModuleExtensions, listModuleExtensions } = require('binary-version-reader');
 const fs = require('fs').promises;
+const package = require('./package.json');
 
 let args = undefined
 
@@ -113,7 +114,7 @@ async function listAssets(input) {
 
 (async () => {
 
-    console.log('particle-asset-ota-tools. Particle Inc, 2024')
+    console.log(`${package.name}. Particle Inc, 2024`)
 
     //if help is passed, show help
     if (args['--help']) {
@@ -140,7 +141,7 @@ async function listAssets(input) {
 
     } else if (command === 'version') {
         //print version
-        console.log("Version: 1.0.0")
+        console.log(`Version: ${package.version}`)
     } else if (command === 'list') {
         //list assets
         await checkInput();
