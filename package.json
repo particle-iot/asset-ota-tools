@@ -1,6 +1,6 @@
 {
   "name": "particle-asset-ota-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Particle Asset OTA Tools",
   "main": "index.js",
   "bin": "index.js",
