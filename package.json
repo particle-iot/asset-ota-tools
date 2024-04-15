@@ -12,12 +12,22 @@
   },
   "dependencies": {
     "arg": "^5.0.2",
-    "binary-version-reader": "^2.4.0",
-    "pkg": "^5.8.1",
-    "util": "^0.12.5"
+    "binary-version-reader": "^2.4.0"
   },
   "pkg": {
-    "targets": [ "node18-linux-arm64", "node18-linux-x64", "node18-macos-x64", "node18-macos-arm64", "node18-win-x64"],
+    "targets": [
+      "node18-linux-arm64",
+      "node18-linux-x64",
+      "node18-macos-x64",
+      "node18-macos-arm64",
+      "node18-win-x64"
+    ],
     "outputPath": "dist"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "node": "^20.11.1"
   }
 }

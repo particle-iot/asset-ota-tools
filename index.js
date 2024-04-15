@@ -1,4 +1,3 @@
-const util = require('util');
 const arg = require('arg');
 const { ModuleInfo, removeModuleExtensions, listModuleExtensions } = require('binary-version-reader');
 const fs = require('fs').promises;
